@@ -3,11 +3,11 @@
 ## image
 2,400 synthetic fluorescent	cell microscopy images.
 - images are in 2 flur levels, each level has 1,200.
-- See the *lable_file.csv* for further description of the names.
+- See the *label_file.csv* for further description of the names.
 ## ground_truth_mask
 1,200 segmentation images.
 - Pixels that belong to the foreground (i.e., the cells) are white, and pixels that belong to the background are black.
-- See the *lable_file.csv* for further description of the names.
+- See the *label_file.csv* for further description of the names.
 ## label_file.csv
 2,400 rows for 2,400 images, 5 colunms for 5 kinds of information.
 - ***image_name***: names of 2,400 synthetic fluorescent cell microscopy images.
