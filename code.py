@@ -4,10 +4,10 @@ import numpy as np
 import csv
 import zipfile
 
-os.chdir("/Users/lq/Downloads/SSC19")
+os.chdir("/Users/lq/Downloads/SSC19")#please change the directory to your working path
 
 ### read training labels ####
-os.chdir("/Users/lq/Downloads/SSC19")
+os.chdir("/Users/lq/Downloads/SSC19")#please change the directory to your working path
 training_image_name = []
 training_cell_count = []
 training_blur_level = []
@@ -22,7 +22,7 @@ with open('train_label.csv', newline='') as f:
         training_stain.append(row[4])
 
 ### read training images ####
-os.chdir("/Users/lq/Downloads/SSC19/train/")
+os.chdir("/Users/lq/Downloads/SSC19/train/")#please change the directory to your working path
 ##create a list (training_list) containing pixel value of 2400 training images
 traning_list = []
 for i in training_image_name:
@@ -34,7 +34,7 @@ for i in training_image_name:
 
 
 ### read test labels ####
-os.chdir("/Users/lq/Downloads/SSC19")
+os.chdir("/Users/lq/Downloads/SSC19")#please change the directory to your working path
 testing_image_name = []
 testing_cell_count = []
 testing_blur_level = []
@@ -49,7 +49,7 @@ with open('test_label.csv', newline='') as f:
         testing_stain.append(row[4])
 
 ### read testing images ####        
-os.chdir("/Users/lq/Downloads/SSC19/test/")
+os.chdir("/Users/lq/Downloads/SSC19/test/")#please change the directory to your working path
 ##create a list (testing_list) containing pixel value of 1200 testing images
 testing_list = []
 for i in testing_image_name:
