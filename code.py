@@ -2,42 +2,61 @@ from PIL import Image
 import os
 import numpy as np
 import csv
+import zipfile
 
 os.chdir("/Users/lq/Downloads/SSC19")
 
-image_name = []
-ground_truth_name = []
-cell_count = []
-blur_level = []
-stain = []
-with open('label_file.csv', newline='') as f:
+### read training labels ####
+os.chdir("/Users/lq/Downloads/SSC19")
+training_image_name = []
+training_cell_count = []
+training_blur_level = []
+training_stain = []
+with open('train_label.csv', newline='') as f:
     reader = csv.reader(f)
     next(reader,None)
     for row in reader:
-        image_name.append(row[1]+'.TIF')
-        ground_truth_name.append(row[2]+'.TIF')
-        cell_count.append(row[3])
-        blur_level.append(row[4])
-        stain.append(row[5])
+        training_image_name.append(row[1])
+        training_cell_count.append(row[2])
+        training_blur_level.append(row[3])
+        training_stain.append(row[4])
 
-
-os.chdir("/Users/lq/Downloads/SSC19/image")
-
-image_list = []
-for i in image_name:
+### read training images ####
+os.chdir("/Users/lq/Downloads/SSC19/train/")
+##create a list (training_list) containing pixel value of 2400 training images
+traning_list = []
+for i in training_image_name:
 	im = Image.open(i)
 	#im.show()
 	imarray = np.array(im)
-	image_list.append(imarray)
+	traning_list.append(imarray)
 
 
-os.chdir("/Users/lq/Downloads/SSC19/ground_truth_mask")
-ground_truth_list = []
-for i in ground_truth_name:
+
+### read test labels ####
+os.chdir("/Users/lq/Downloads/SSC19")
+testing_image_name = []
+testing_cell_count = []
+testing_blur_level = []
+testing_stain = []
+with open('test_label.csv', newline='') as f:
+    reader = csv.reader(f)
+    next(reader,None)
+    for row in reader:
+        testing_image_name.append(row[1])
+        testing_cell_count.append(row[2])
+        testing_blur_level.append(row[3])
+        testing_stain.append(row[4])
+
+### read testing images ####        
+os.chdir("/Users/lq/Downloads/SSC19/test/")
+##create a list (testing_list) containing pixel value of 1200 testing images
+testing_list = []
+for i in testing_image_name:
 	im = Image.open(i)
 	#im.show()
 	imarray = np.array(im)
-	ground_truth_list.append(imarray)
+	testing_list.append(imarray)
 
 
 
