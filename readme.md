@@ -48,7 +48,7 @@ Testing set contains 1,200 images randomly selected from 3 levels of blur (*F1,F
 - ***image_name***: names of 2,400 synthetic fluorescent cell microscopy images in training set.
     
     > *A01_C1_F1_s01_w1.TIF*
-    > - *A01*: The simulated 384-well plate format. Rows are nameed A-P and columns 1-24.
+    > - *A01*: The simulated 384-well plate format. Rows are named A-P and columns 1-24.
     > - *C1*: The number of cells simulated in the image (1-100).
     > - *F1*: The amount of focus blur applied (1, 23, 48).
     > - *s01*: Number of samples(1-25).You don't need this information.
@@ -74,7 +74,7 @@ ing set, 4 colunms for 4 kinds of information.
 ### code.R
 R code for reading the pixel value of the images and their label information.
 - Please change the directory to your working path.
-- This R code may take more than 15 mins to read all the images in the enviroment.Feel free to edit this or use your own methods to read the pixel value of the images in your environment.
+- This R code may take more than 15 mins to read all the images in the environment.Feel free to edit this or use your own methods to read the pixel value of the images in your environment.
 ### code.py
 Python code for reading the pixel value of the images, ground truth masks, and their label information.
 - Please change the directory to your working path.
